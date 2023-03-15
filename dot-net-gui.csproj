@@ -8,5 +8,8 @@
     <UseWPF>true</UseWPF>
     <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="img\**" />
+  </ItemGroup>
 
 </Project>

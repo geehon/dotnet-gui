@@ -18,7 +18,7 @@
         <Label Grid.Column="0">内容</Label>
         <TextBox Grid.Row="1" x:Name="lstNames" TextWrapping="Wrap" IsReadOnly="True" />
         <Image Grid.Row="1" Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Top"
-            Source="D:\\workspace\\dot-net-gui\\dot-net-gui\\img\\tiger.png" />
+            Source="img/whitetiger.png" />
         <StackPanel Grid.Row="2" Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Bottom">
             <TextBox x:Name="txtName" Height="20" />
             <Button x:Name="btnAdd" Margin="0,5,0,5" Click="ButtonAddName_Click">添加</Button>
