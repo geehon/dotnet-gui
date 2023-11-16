@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Net.Http;
 
 namespace dotnet.gui
@@ -36,19 +23,24 @@ namespace dotnet.gui
             }
             if (string.IsNullOrWhiteSpace(txtName.Text))
             {
-                using (var client = new HttpClient())
-                {
+                using var client = new HttpClient();
+                try {
                     var response = await client.GetAsync("https://www.formytest.top/api/v1/vpsInfo");
                     var content = await response.Content.ReadAsStringAsync();
                     Console.WriteLine(content);
                     lstNames.Text = (content);
                 }
+                catch (HttpRequestException ex) {
+
+                    lstNames.Text = "网络出错！";
+                }
+                
             }
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("All will be cleared!");
-            lstNames.Text = ("");
+            lstNames.Text = "";
         }
     }
 
