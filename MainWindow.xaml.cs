@@ -31,13 +31,12 @@ namespace dotnet.gui
                     lstNames.Text = (content);
                 }
                 catch (HttpRequestException ex) {
-
-                    lstNames.Text = "网络出错！";
+                    lstNames.Text = $"网络出错！{ex.Message}";
                 }
                 
             }
         }
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("All will be cleared!");
             lstNames.Text = "";
